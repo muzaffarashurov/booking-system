@@ -69,8 +69,8 @@ public class Resource {
     @Column(name = "image_url", length = 500)
     private String imageUrl;
 
-    @Column(name = "required_approval", nullable = false)
-    private Boolean requiredApproval = false;
+    @Column(name = "requires_approval", nullable = false)
+    private Boolean requiresApproval = false;
 
     @Column(name = "min_booking_hours")
     private Integer minBookingHours = 1;

@@ -89,6 +89,8 @@ public class Booking {
     @Column(name = "reminder_sent", nullable = false)
     private Boolean reminderSent = false;
 
+    @PrePersist
+    @PreUpdate
     public void validateDates() {
         if (startTime != null && endTime != null && endTime.isBefore(startTime)) {
             throw new IllegalArgumentException("End time must be after start time");

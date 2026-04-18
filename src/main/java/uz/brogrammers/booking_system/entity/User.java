@@ -41,8 +41,8 @@ public class User {
     private String lastName;
 
     @NotBlank(message = "Email is required")
-    @Email(message = "Email must be valid")
-    @Size(max = 100, message = "Email must be between 2 and 100 characters")
+    @Email(message = "Email should be valid")
+    @Size(max = 100, message = "Email must not exceed 100 characters")
     @Column(name = "email", nullable = false, unique = true, length = 100)
     private String email;
 
@@ -51,7 +51,7 @@ public class User {
     @Column(name = "password", nullable = false, length = 255)
     private String password;
 
-    @Pattern(regexp = "^\\+?[1-9]\\d{1,14}$", message = "Phone number must be valid")
+    @Pattern(regexp = "^\\+?[1-9]\\d{1,14}$", message = "Phone number should be valid")
     @Size(max = 20, message = "Phone number must not exceed 20 characters")
     @Column(name = "phone", length = 20)
     private String phone;
@@ -63,7 +63,7 @@ public class User {
     @Column(name = "is_active", nullable = false)
     private Boolean isActive = true;
 
-    @Column(name = "is_email_verified", nullable = false)
+    @Column(name = "email_verified", nullable = false)
     private Boolean emailVerified = false;
 
     @CreationTimestamp
